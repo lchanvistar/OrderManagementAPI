@@ -1,0 +1,450 @@
+openapi: "3.0.2"
+info:
+  title: Ad Serving API
+  version: "1.1"
+servers:
+  - url: https://staging.vistarmedia.com
+    description: Vistar Staging Environment
+  - url: https://trafficking.vistarmedia.com
+    description: Vistar Production Environment
+
+paths:
+  /inventory/api/v2/external/networks/{networkId}/flex-orders:
+    parameters:
+      - name: networkId
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      summary: List flexible orders
+      tags:
+        - Flexible Orders
+      responses:
+        "200":
+          $ref: "#/components/responses/OrderList"
+    post:
+      summary: Add a flex order
+      tags:
+        - Flexible Orders
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              $ref: "#/components/schemas/Order"
+      responses:
+        "200":
+          $ref: "#/components/responses/Order"
+
+  /inventory/api/v2/external/networks/{networkId}/flex-orders/{orderId}:
+    parameters:
+      - name: networkId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: orderId
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      summary: Fetch a flexible order
+      tags:
+        - Flexible Orders
+      responses:
+        "200":
+          $ref: "#/components/responses/Order"
+    put:
+      summary: Update a flex order
+      tags:
+        - Flexible Orders
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              $ref: "#/components/schemas/Order"
+      responses:
+        "200":
+          $ref: "#/components/responses/Order"
+
+  /inventory/api/v2/external/networks/{networkId}/flex-orders/{orderId}/line-items:
+    parameters:
+      - name: networkId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: orderId
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      summary: List line items for a flexible order
+      tags:
+        - Flexible Line Items
+      responses:
+        "200":
+          $ref: "#/components/responses/FlexLineItemList"
+    post:
+      summary: Add a flex line item
+      tags:
+        - Flexible Line Items
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              $ref: "#/components/schemas/FlexLineItem"
+      responses:
+        "200":
+          $ref: "#/components/responses/FlexLineItem"
+
+  /inventory/api/v2/external/networks/{networkId}/flex-orders/{orderId}/line-items/{lineItemId}:
+    parameters:
+      - name: networkId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: orderId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: lineItemId
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      summary: Fetch a flexible line item
+      tags:
+        - Flexible Line Items
+      responses:
+        "200":
+          $ref: "#/components/responses/FlexLineItem"
+    put:
+      summary: Update a flex line item
+      tags:
+        - Flexible Line Items
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              $ref: "#/components/schemas/FlexLineItem"
+      responses:
+        "200":
+          $ref: "#/components/responses/FlexLineItem"
+
+  /inventory/api/v2/external/networks/{networkId}/loop-orders:
+    parameters:
+      - name: networkId
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      summary: List loop orders
+      tags:
+        - Loop Orders
+      responses:
+        "200":
+          $ref: "#/components/responses/OrderList"
+    post:
+      summary: Add a loop order
+      tags:
+        - Loop Orders
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              $ref: "#/components/schemas/Order"
+      responses:
+        "200":
+          $ref: "#/components/responses/Order"
+
+  /inventory/api/v2/external/networks/{networkId}/loop-orders/{orderId}:
+    parameters:
+      - name: networkId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: orderId
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      summary: Fetch a loop order
+      tags:
+        - Loop Orders
+      responses:
+        "200":
+          $ref: "#/components/responses/Order"
+    put:
+      summary: Update a loop order
+      tags:
+        - Loop Orders
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              $ref: "#/components/schemas/Order"
+      responses:
+        "200":
+          $ref: "#/components/responses/Order"
+
+  /inventory/api/v2/external/networks/{networkId}/loop-orders/{orderId}/line-items:
+    parameters:
+      - name: networkId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: orderId
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      summary: List line items for a loop order
+      tags:
+        - Loop Line Items
+      responses:
+        "200":
+          $ref: "#/components/responses/LoopLineItemList"
+    post:
+      summary: Add a loop line item
+      tags:
+        - Loop Line Items
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              $ref: "#/components/schemas/LoopLineItem"
+      responses:
+        "200":
+          $ref: "#/components/responses/LoopLineItem"
+
+  /inventory/api/v2/external/networks/{networkId}/loop-orders/{orderId}/line-items/{lineItemId}:
+    parameters:
+      - name: networkId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: orderId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: lineItemId
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      summary: Fetch a loop line item
+      tags:
+        - Loop Line Items
+      responses:
+        "200":
+          $ref: "#/components/responses/LoopLineItem"
+    put:
+      summary: Update a loop line item
+      tags:
+        - Loop Line Items
+      requestBody:
+        content:
+          "application/json":
+            schema:
+              $ref: "#/components/schemas/LoopLineItem"
+      responses:
+        "200":
+          $ref: "#/components/responses/LoopLineItem"
+
+components:
+  schemas:
+    Budget:
+      type: object
+      properties:
+        type:
+          type: string
+          enum:
+            - CPM_CENTS
+            - PRICE_CENTS
+        value:
+          type: number
+          format: float
+      required:
+        - type
+        - value
+    FlexLineItem:
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+        name:
+          type: string
+        startDate:
+          type: string
+          format: date-time
+        endDate:
+          type: string
+          format: date-time
+        priority:
+          type: string
+          enum:
+            - DEFAULT
+            - BONUS
+            - HOUSE
+            - SPONSORSHIP
+        goal:
+          $ref: "#/components/schemas/Goal"
+        cpmCents:
+          type: number
+          format: float
+      required:
+        - name
+        - startDate
+        - endDate
+        - priority
+        - goal
+    Frequency:
+      type: object
+      properties:
+        slots:
+          type: number
+        loops:
+          type: number
+      required:
+        - slots
+        - loops
+    Goal:
+      type: object
+      properties:
+        type:
+          type: string
+          enum:
+            - DOLLARS
+            - FREQUENCY
+            - IMPRESSIONS
+            - SOV
+        cents:
+          type: number
+          format: int64
+        frequency:
+          type: number
+          format: int32
+        impressions:
+          type: number
+          format: int64
+        shareOfVoice:
+          type: number
+          format: double
+    LoopLineItem:
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+        name:
+          type: string
+        startDate:
+          type: string
+          format: date-time
+        endDate:
+          type: string
+          format: date-time
+        durationSeconds:
+          type: number
+        frequency:
+          $ref: "#/components/schemas/Frequency"
+        spotType:
+          type: string
+          enum:
+            - ADVERTISEMENT
+            - CONTENT
+        budget:
+          $ref: "#/components/schemas/Budget"
+      required:
+        - name
+        - startDate
+        - endDate
+        - durationSeconds
+        - frequency
+        - spotType
+        - budget
+    Order:
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+        name:
+          type: string
+        advertiserId:
+          type: string
+        contractNumber:
+          type: string
+        creativeCategoryId:
+          type: string
+      required:
+        - name
+        - advertiserId
+
+  responses:
+    FlexLineItem:
+      description: An flex line item
+      content:
+        "application/json":
+          schema:
+            $ref: "#/components/schemas/FlexLineItem"
+    FlexLineItemList:
+      description: List of flexible line items
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              orders:
+                type: array
+                items:
+                  $ref: "#/components/schemas/FlexLineItem"
+    LoopLineItem:
+      description: An loop line item
+      content:
+        "application/json":
+          schema:
+            $ref: "#/components/schemas/LoopLineItem"
+    LoopLineItemList:
+      description: List of loop line items
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              orders:
+                type: array
+                items:
+                  $ref: "#/components/schemas/LoopLineItem"
+    Order:
+      description: An order
+      content:
+        "application/json":
+          schema:
+            $ref: "#/components/schemas/Order"
+    OrderList:
+      description: List of orders
+      content:
+        "application/json":
+          schema:
+            type: object
+            properties:
+              orders:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Order"
