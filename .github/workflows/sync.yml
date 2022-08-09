@@ -19,4 +19,4 @@ jobs:
         # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
         uses: readmeio/rdme@7.5.0
         with:
-          rdme: openapi ad-serving.openapi.yml --key=rdme_xn8s9h073e789f4c2da98e41dfe9c4a2a2d093be86659314a3a8fc983507ffa5e9243a --id=62f276110ee7040cad5905fd
+          rdme: openapi [path-to-file.json] --key=${{ secrets.README_API_KEY }} --id=${{ secrets.README_API_DEFINITION_ID }}
