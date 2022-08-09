@@ -17,7 +17,7 @@ paths:
         schema:
           type: string
     get:
-      summary: List flexible orders_test 5
+      summary: List flexible orders_test _Tom
       tags:
         - Flexible Orders
       responses:
