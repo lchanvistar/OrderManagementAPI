@@ -20,8 +20,4 @@ jobs:
 
     uses: readmeio/rdme@7.5.0
     with:
-      rdme: openapi ad-serving.openapi.yml --key=rdme_xn8s9h073e789f4c2da98e41dfe9c4a2a2d093be86659314a3a8fc983507ffa5e9243a  --id=62f276110ee7040cad5905fd
-
-
-
-
+    rdme: openapi ad-serving.openapi.yml --key=rdme_xn8s9h073e789f4c2da98e41dfe9c4a2a2d093be86659314a3a8fc983507ffa5e9243a  --id=62f276110ee7040cad5905fd
